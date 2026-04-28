@@ -17,24 +17,25 @@ ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'academy.localhost', 'dreamacademy.lo
 SHARED_APPS = [
     'django_tenants',  # mandatory
     'customers', 
-    'home_auth',
     'django.contrib.staticfiles',
     'django.contrib.sessions',  
     'django.contrib.messages', 
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
+    'home_auth',
     # ... other global apps
 ]
 
 TENANT_APPS = [
     'django.contrib.auth', 
     'django.contrib.sessions',  
-    'django.contrib.messages',  
+    'django.contrib.messages', 
     'students',            
     'exams',
     'finance',
-    'school'
+    'school',
+    'home_auth',
 ]
 
 INSTALLED_APPS = list(SHARED_APPS) + [app for app in TENANT_APPS if app not in SHARED_APPS]
